@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_samplejavaapp_1692798403866-pr-trigger-input-set
+  identifier: Build_samplejavaapp_1692798403866prtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: javaTesting
+  pipeline:
+    identifier: Build_samplejavaapp_1692798403866
+    properties:
+      ci:
+        codebase:
+          build:
+            type: PR
+            spec:
+              number: <+trigger.prNumber>
