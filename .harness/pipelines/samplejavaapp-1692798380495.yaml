@@ -1,0 +1,37 @@
+pipeline:
+  identifier: Build_samplejavaapp_1692798403866
+  name: Build samplejavaapp
+  orgIdentifier: default
+  projectIdentifier: javaTesting
+  properties:
+    ci:
+      codebase:
+        build: <+input>
+        connectorRef: account.Github_OAuth_1690900833053
+        repoName: SubashHappy/samplejavaapp
+  stages:
+    - stage:
+        identifier: build
+        name: build
+        spec:
+          cloneCodebase: true
+          execution:
+            steps:
+              - step:
+                  identifier: dockerbuild
+                  name: docker_build
+                  spec:
+                    image: plugins/docker
+                    settings:
+                      dry_run: "true"
+                      repo: hello/world
+                      tags: latest
+                  timeout: ""
+                  type: Plugin
+          platform:
+            arch: Amd64
+            os: Linux
+          runtime:
+            spec: {}
+            type: Cloud
+        type: CI
