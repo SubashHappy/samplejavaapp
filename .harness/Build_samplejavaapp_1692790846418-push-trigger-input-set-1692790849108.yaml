@@ -1,0 +1,14 @@
+inputSet:
+  name: Build_samplejavaapp_1692790846418-push-trigger-input-set
+  identifier: Build_samplejavaapp_1692790846418pushtriggerinputset
+  orgIdentifier: default
+  projectIdentifier: Testing
+  pipeline:
+    identifier: Build_samplejavaapp_1692790846418
+    properties:
+      ci:
+        codebase:
+          build:
+            type: branch
+            spec:
+              branch: <+trigger.branch>
